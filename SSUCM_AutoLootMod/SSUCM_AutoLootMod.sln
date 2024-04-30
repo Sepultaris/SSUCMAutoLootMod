@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.6.33723.286
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShalebridgeAutoLootMod", "ShalebridgeAutoLootMod.csproj", "{6D0FD3B4-F7E7-4D88-9880-1CDC69E5FEBA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SSUCM_AutoLootMod", "SSUCM_AutoLootMod.csproj", "{6D0FD3B4-F7E7-4D88-9880-1CDC69E5FEBA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

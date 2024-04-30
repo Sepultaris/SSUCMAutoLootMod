@@ -1,4 +1,4 @@
-﻿namespace ShalebridgeAutoLoot
+﻿namespace SSUCM_AutoLootMod
 {
     public class Mod : IHarmonyMod
     {
@@ -7,10 +7,10 @@
         public const bool DEBUGGING = false;
         //Point to your mod directory
         public static ModContainer Container => ModManager.GetModContainerByPath(Mod.ModPath);
-        public static string ModPath = Path.Combine(ModManager.ModPath, "ShalebridgeAutoLoot");
+        public static string ModPath = Path.Combine(ModManager.ModPath, "SSUCM_AutoLootMod");
 
         //IDs are used by Harmony to separate multiple patches
-        const string ID = "com.ACE.ACEmulator.ShalebridgeAutoLoot";
+        const string ID = "com.ACE.ACEmulator.SSUCM_AutoLootMod";
         public static Harmony Harmony { get; set; } = new(ID);
 
         private bool disposedValue;
@@ -108,6 +108,7 @@
             {
                 //Patch everything in the mod with Harmony attributes
                 Harmony.PatchAllUncategorized();
+                Harmony.PatchCategory(nameof(CreatureDeathPatch));
 
                 patch.Start();
             }

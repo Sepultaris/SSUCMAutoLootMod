@@ -5,7 +5,7 @@
 		<NoWarn>0436;1073;8509</NoWarn>
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
-		<OutputPath>C:\Shalebridge\Mods\$(AssemblyName)</OutputPath>
+		<OutputPath>C:\ShalebridgeTest\Mods\$(AssemblyName)</OutputPath>
 		<AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
 		<AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>
 		<CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
