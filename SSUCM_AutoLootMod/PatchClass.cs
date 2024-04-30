@@ -102,6 +102,53 @@ namespace SSUCM_AutoLootMod
 
         #region Patches
 
+        [CommandHandler("al_help", AccessLevel.Admin, CommandHandlerFlag.RequiresWorld)]
+        public static void HandleAutoLootHelp(Session session, params string[] parameters)
+        {
+            var player = session.Player;
+            var props = new List<string>();
+            var msg = "";
+            if (parameters.Length == 0)
+            {
+                msg += "Valid requirements are: ";
+                foreach (var property in typeof(WorldObject).GetProperties())
+                {
+                    if (!property.PropertyType.IsClass() || property.PropertyType == typeof(string))
+                        props.Add(property.Name);
+                }
+                props.Sort();
+                foreach (var prop in props)
+                {
+                    msg += prop + ", ";
+                }
+                player.SendMessage(msg, ChatMessageType.Broadcast);
+            }
+            if (parameters.Length == 1)
+            {
+                msg += "Valid values are: ";
+                foreach (var property in typeof(WorldObject).GetProperties())
+                {
+                    if (property.Name == parameters[0])
+                    {
+                        var type = property.PropertyType;
+                        if (type.IsEnum)
+                        {
+                            foreach (var value in Enum.GetValues(type))
+                            {
+                                msg += value + ", ";
+                            }
+                        }
+                        else
+                        {
+                            msg += type.FullName + " value.";
+                        }
+                        break;
+                    }
+                }
+                player.SendMessage(msg, ChatMessageType.Broadcast);
+            }
+        }
+
         [CommandHandler("al_clearprofile", AccessLevel.Admin, CommandHandlerFlag.RequiresWorld)]
         public static void HandleAutoLootClearProfile(Session session, params string[] parameters)
         {
