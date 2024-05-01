@@ -7,7 +7,7 @@ using ACE.Server.Command;
 using ACE.Server.Entity;
 using ACE.Server.Network;
 using ACE.Server.WorldObjects;
-using Newtonsoft.Json.Linq;
+using System.Text.Json;
 using SSUCM_AutoLootMod;
 
 

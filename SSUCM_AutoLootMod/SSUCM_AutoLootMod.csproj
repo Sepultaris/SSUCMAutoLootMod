@@ -25,21 +25,16 @@
 	<ItemGroup>
 		<PackageReference Include="Lib.Harmony" Version="2.3.2" />
 		<PackageReference Include="ACEmulator.ACE.Shared" Version="1.0.0" />
-		<PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.9.0" />
-		<PackageReference Include="System.Text.Json" Version="7.0.0" Aliases="Json" />
 	</ItemGroup>
 
 	<ItemGroup>
 		<Reference Include="ACE.Adapter">
-			<HintPath>C:\ShalebridgeTest\Server\ACE.Adapter.dll</HintPath>
 			<Private>False</Private>
 		</Reference>
 		<Reference Include="ACE.Common">
-			<HintPath>C:\ShalebridgeTest\Server\ACE.Common.dll</HintPath>
 			<Private>False</Private>
 		</Reference>
 		<Reference Include="ACE.Database">
-			<HintPath>C:\ShalebridgeTest\Server\ACE.Database.dll</HintPath>
 			<Private>False</Private>
 		</Reference>
 		<Reference Include="ACE.DatLoader">
