@@ -28,11 +28,13 @@
         #region Initialize / Dispose (called by ACE)
         public void Initialize()
         {
+            /*
             if (DEBUGGING)
             {
                 Harmony.DEBUG = DEBUGGING;
                 ModManager.Log($"Initializing {ID}...");
             }
+            */
 
             Instance = this;
 
