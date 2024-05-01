@@ -29,12 +29,15 @@
 
 	<ItemGroup>
 		<Reference Include="ACE.Adapter">
+			<HintPath>C:\ShalebridgeTest\Server\ACE.Common.dll</HintPath>
 			<Private>False</Private>
 		</Reference>
 		<Reference Include="ACE.Common">
+			<HintPath>C:\ShalebridgeTest\Server\ACE.Common.dll</HintPath>
 			<Private>False</Private>
 		</Reference>
 		<Reference Include="ACE.Database">
+			<HintPath>C:\ShalebridgeTest\Server\ACE.Database.dll</HintPath>
 			<Private>False</Private>
 		</Reference>
 		<Reference Include="ACE.DatLoader">
