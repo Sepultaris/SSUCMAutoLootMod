@@ -17,9 +17,9 @@ namespace SSUCM_AutoLootMod
 
     internal class AutoLootRequirement
     {
-        public string Value { get; set; }
+        public string Value { get; set; } = "";
         public ComparisonType Comparison { get; set; }
-        public string PropertyName { get; set; }
+        public string PropertyName { get; set; } = "";
 
     }
 }

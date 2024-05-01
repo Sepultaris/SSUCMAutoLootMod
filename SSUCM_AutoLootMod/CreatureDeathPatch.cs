@@ -22,14 +22,12 @@ namespace SSUCM_AutoLootMod
             //Debugger.Break();
             Player player;
             
-            try {
-                player = killer.TryGetAttacker() as Player;
-            }
-            catch (Exception e)
+            var playerNullable = killer.TryGetAttacker() as Player;
+            if (playerNullable != null)
             {
-                return;
+                player = playerNullable;
             }
-            if (player == null)
+            else
             {
                 return;
             }
@@ -39,7 +37,7 @@ namespace SSUCM_AutoLootMod
             {
                 workingAutoLootProfileString = JsonSerializer.Serialize(new AutoLootProfile());
             }
-            AutoLootProfile workingAutoLootProfile = JsonSerializer.Deserialize<AutoLootProfile>(workingAutoLootProfileString);
+            AutoLootProfile workingAutoLootProfile = JsonSerializer.Deserialize<AutoLootProfile>(workingAutoLootProfileString) ?? new();
 
             foreach (var kvp in corpse.Inventory)
             {
@@ -72,7 +70,7 @@ namespace SSUCM_AutoLootMod
                                         }
                                         break;
                                     case ComparisonType.NotEqual:
-                                        if (!objectValue.Equals(requirementValue))
+                                        if (objectValue.Equals(requirementValue))
                                         {
                                             requirementsSatisfied = false;
                                         }

@@ -60,7 +60,7 @@ namespace SSUCM_AutoLootMod
 
             try
             {
-                Settings = JsonSerializer.Deserialize<Settings>(jsonString, _serializeOptions);
+                Settings = JsonSerializer.Deserialize<Settings>(jsonString, _serializeOptions) ?? new();
             }
             catch (Exception)
             {
@@ -171,7 +171,7 @@ namespace SSUCM_AutoLootMod
             {
                 workingAutoLootProfileString = JsonSerializer.Serialize(new AutoLootProfile());
             }
-            AutoLootProfile workingAutoLootProfile = JsonSerializer.Deserialize<AutoLootProfile>(workingAutoLootProfileString);
+            AutoLootProfile workingAutoLootProfile = JsonSerializer.Deserialize<AutoLootProfile>(workingAutoLootProfileString) ?? new();
             if (workingAutoLootProfile.Rules.ContainsKey(parameters[0]))
             {
                 workingAutoLootProfile.Rules.Remove(parameters[0]);
@@ -198,7 +198,7 @@ namespace SSUCM_AutoLootMod
             {
                 workingAutoLootProfileString = JsonSerializer.Serialize(new AutoLootProfile());
             }
-            AutoLootProfile workingAutoLootProfile = JsonSerializer.Deserialize<AutoLootProfile>(workingAutoLootProfileString);
+            AutoLootProfile workingAutoLootProfile = JsonSerializer.Deserialize<AutoLootProfile>(workingAutoLootProfileString) ?? new();
 
             var ruleName = parameters[0];
             var rule = new AutoLootRule();
@@ -208,7 +208,6 @@ namespace SSUCM_AutoLootMod
             }
             else
             {
-                rule = new AutoLootRule();
                 workingAutoLootProfile.Rules.Add(ruleName, rule);
             }
             for (int i = 1; i < parameters.Length - 1; i++)
@@ -266,7 +265,7 @@ namespace SSUCM_AutoLootMod
             {
                 autoLootProfilesString = JsonSerializer.Serialize(new Dictionary<string, AutoLootProfile>());
             }
-            var autoLootProfiles = JsonSerializer.Deserialize<Dictionary<string, AutoLootProfile>>(autoLootProfilesString);
+            var autoLootProfiles = JsonSerializer.Deserialize<Dictionary<string, AutoLootProfile>>(autoLootProfilesString) ?? new();
             if (autoLootProfiles.ContainsKey(parameters[0]))
             {
                 player.SendMessage("Profile already exists.", ChatMessageType.Broadcast);
@@ -292,7 +291,7 @@ namespace SSUCM_AutoLootMod
             {
                 autoLootProfilesString = JsonSerializer.Serialize(new Dictionary<string, AutoLootProfile>());
             }
-            var autoLootProfiles = JsonSerializer.Deserialize<Dictionary<string, AutoLootProfile>>(autoLootProfilesString);
+            var autoLootProfiles = JsonSerializer.Deserialize<Dictionary<string, AutoLootProfile>>(autoLootProfilesString) ?? new();
             if (!autoLootProfiles.ContainsKey(parameters[0]))
             {
                 player.SendMessage("Profile does not exist.", ChatMessageType.Broadcast);
@@ -317,7 +316,7 @@ namespace SSUCM_AutoLootMod
             {
                 autoLootProfilesString = JsonSerializer.Serialize(new Dictionary<string, AutoLootProfile>());
             }
-            var autoLootProfiles = JsonSerializer.Deserialize<Dictionary<string, AutoLootProfile>>(autoLootProfilesString);
+            var autoLootProfiles = JsonSerializer.Deserialize<Dictionary<string, AutoLootProfile>>(autoLootProfilesString) ?? new();
             if (!autoLootProfiles.ContainsKey(parameters[0]))
             {
                 player.SendMessage("Profile does not exist.", ChatMessageType.Broadcast);
@@ -344,7 +343,7 @@ namespace SSUCM_AutoLootMod
             {
                 autoLootProfilesString = JsonSerializer.Serialize(new Dictionary<string, AutoLootProfile>());
             }
-            var autoLootProfiles = JsonSerializer.Deserialize<Dictionary<string, AutoLootProfile>>(autoLootProfilesString);
+            var autoLootProfiles = JsonSerializer.Deserialize<Dictionary<string, AutoLootProfile>>(autoLootProfilesString) ?? new();
             if (!autoLootProfiles.ContainsKey(parameters[0]))
             {
                 player.SendMessage("Profile does not exist.", ChatMessageType.Broadcast);
@@ -355,7 +354,7 @@ namespace SSUCM_AutoLootMod
             {
                 workingAutoLootProfileString = JsonSerializer.Serialize(new AutoLootProfile());
             }
-            AutoLootProfile workingAutoLootProfile = JsonSerializer.Deserialize<AutoLootProfile>(workingAutoLootProfileString);
+            AutoLootProfile workingAutoLootProfile = JsonSerializer.Deserialize<AutoLootProfile>(workingAutoLootProfileString) ?? new();
             workingAutoLootProfile.Name = parameters[0];
             autoLootProfiles[parameters[0]] = workingAutoLootProfile;
 

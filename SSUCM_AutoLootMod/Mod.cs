@@ -14,10 +14,10 @@
         public static Harmony Harmony { get; set; } = new(ID);
 
         private bool disposedValue;
-        public static Mod Instance { get; private set; }
+        public static Mod? Instance { get; private set; }
 
         //Reload on changes in Settings.json
-        private FileSystemWatcher _settingsWatcher;
+        private FileSystemWatcher? _settingsWatcher;
         private DateTime _lastChange = DateTime.Now;
         private readonly TimeSpan _reloadInterval = TimeSpan.FromSeconds(3);
 
@@ -28,11 +28,13 @@
         #region Initialize / Dispose (called by ACE)
         public void Initialize()
         {
+            /*
             if (DEBUGGING)
             {
                 Harmony.DEBUG = DEBUGGING;
                 ModManager.Log($"Initializing {ID}...");
             }
+            */
 
             Instance = this;
 
@@ -58,8 +60,10 @@
                 if (disposing)
                 {
                     Stop();
-
-                    _settingsWatcher.Changed -= Settings_Changed;
+                    if (_settingsWatcher != null)
+                    {
+                        _settingsWatcher.Changed -= Settings_Changed;
+                    }
                 }
 
                 // TODO: free unmanaged resources (unmanaged objects) and override finalizer
