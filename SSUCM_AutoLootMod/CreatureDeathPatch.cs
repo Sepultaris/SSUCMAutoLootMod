@@ -7,8 +7,8 @@ using System.Threading.Tasks;
 using ACE.Server.Entity;
 using ACE.Server.WorldObjects;
 using ACE.Entity.Enum;
-using Newtonsoft.Json.Linq;
 using System.Diagnostics;
+using System.Text.Json;
 
 namespace SSUCM_AutoLootMod
 {
