@@ -72,7 +72,7 @@ namespace SSUCM_AutoLootMod
                                         }
                                         break;
                                     case ComparisonType.NotEqual:
-                                        if (!objectValue.Equals(requirementValue))
+                                        if (objectValue.Equals(requirementValue))
                                         {
                                             requirementsSatisfied = false;
                                         }
