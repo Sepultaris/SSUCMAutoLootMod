@@ -39,7 +39,7 @@
 
 	<ItemGroup>
 		<Reference Include="ACE.Adapter">
-			<HintPath>C:\ShalebridgeTest\Server\ACE.Common.dll</HintPath>
+			<HintPath>C:\ShalebridgeTest\Server\ACE.Adapter.dll</HintPath>
 			<Private>False</Private>
 		</Reference>
 		<Reference Include="ACE.Common">
